@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\StudentsImport;
 use Illuminate\Http\Request;
-use Maatwebsite\Excel\Facades\Excel;
 
 class CertificateController extends Controller
 {
@@ -40,10 +40,11 @@ class CertificateController extends Controller
         $data = new \App\Certificate;
         $certis = array();
 
-        $reader = Excel::load($fullPath);
+        $students_array = (new StudentsImport)->toArray($fullPath)[0];
 
-        foreach ($reader->toArray() as $row) {
-            $student = \App\Student::Create($row);
+        foreach ($students_array as $row) {
+            $student_email = $row['email'];
+            $student = \App\Student::whereEmail($student_email)->firstOrFail();
             $row += ['student_id' => $student->id]; 
             $row += ['course_id' => $course_id];
             $generator = new RandomStringGenerator;

@@ -1,22 +1,33 @@
 <p align="center"><img src="https://www.kalpvaig.com/assets/img/corporate/logo.png"></p>
 
-## About Praman Patra - Certificate Generator
+## About Certificate Generator
 
-Pramanpatra is based on the top of Laravel a web application framework and AdminLTE a third party admin panel library . Pramanpatra is:
+This certificate generator is based on the top of Laravel a web application framework and AdminLTE a third party admin panel library.
 
-- [Simple, easy to use](https://kalpvaig.com).
-- Single Admin Panel based certificate generator.
+## Installing
 
-## Installing Praman Patra
-Database Creation, run following command in the root directory of the project
+### Composer
+Ensure you have composer installed
+
+`brew install composer`
+
+Run the following command to install the dependencies
+
+`composer install`
+
+### Database Setup
+Run following command to setup the database
+
 `php artisan migrate`
 
-Edit Admin Username and password from database/seeds/AdminSeeder.php and Run following command
+Edit Admin Username and password from database/seeders/AdminSeeder.php and Run following command
 
-`php artisan db:seed --class="AdminSeeder"`
+`php artisan db:seed`
 
-## Using Praman Patra
+## Using
+Run the following command
+`php artisan serve`
 
-Open https://url.com/login to open the login page
+Open http://localhost:8000/login to open the login page
 
-And https://url.com/ For public view to verify certificate by using numbers
+And http://localhost:8000/ For public view to verify certificate by using numbers

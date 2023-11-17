@@ -15,7 +15,7 @@
                         <table class="table table-borderless">
                             <tbody>
                                 <img src='{{ asset("images/$certificate->student_photo_url")}}' height="100" />
-                                <tr><th>Certificat Number</th><td>{{ $certificate->certification_number }}</td></tr>
+                                <tr><th>Certificate Number</th><td>{{ $certificate->certification_number }}</td></tr>
                                 <tr><th> Student Name </th><td> {{ $certificate->student_name }} </td></tr>
                             </tbody>
                         </table>

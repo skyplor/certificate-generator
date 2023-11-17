@@ -43,7 +43,7 @@
     <div class="form-group {{ $errors->has('fathersname') ? 'has-error' : ''}}">
         {!! Form::label('fathersname', 'Fathers Name', ['class' => 'col-md-4 control-label']) !!}
         <div class="col-md-6">
-            {!! Form::date('fathersname', null, ('' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
+            {!! Form::text('fathersname', null, ('' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
             {!! $errors->first('fathersname', '<p class="help-block">:message</p>') !!}
         </div>
     </div>
@@ -104,7 +104,7 @@
     </div>
 
     <div class="form-group">
-        <label class="col-md-4" for="photo">Choose Student$quot;s Photo</label>
+        <label class="col-md-4" for="photo">Choose Student's Photo</label>
         <div class="col-md-6">
             <input type="file" name="photo" class="form-control" />
         </div>
